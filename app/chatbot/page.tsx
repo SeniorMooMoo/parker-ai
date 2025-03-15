@@ -1,80 +1,20 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState, useRef, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Bot, Send, User, Info, ArrowRight } from "lucide-react"
-import { MainNav } from "@/components/main-nav"
+import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Bot, Send, User, Info, ArrowRight } from "lucide-react";
+import { MainNav } from "@/components/main-nav";
 
 type Message = {
-  id: number
-  content: string
-  sender: "user" | "bot"
-  timestamp: Date
-}
-
-// Sample responses for the chatbot
-const botResponses = [
-  {
-    keywords: ["tremor", "shaking", "shake"],
-    response:
-      "Tremors are a common symptom of Parkinson's disease. They often start in one hand, finger, or foot, and typically occur at rest. If you're experiencing new or worsening tremors, it's important to track them in your symptom journal and discuss with your healthcare provider.",
-  },
-  {
-    keywords: ["stiff", "stiffness", "rigid", "rigidity"],
-    response:
-      "Muscle stiffness or rigidity is a key symptom of Parkinson's. This can make it harder to move and may cause pain. Regular stretching, physical therapy, and proper medication can help manage this symptom. Have you been tracking your stiffness levels in the app?",
-  },
-  {
-    keywords: ["slow", "slowness", "bradykinesia"],
-    response:
-      "Slowness of movement, or bradykinesia, is a cardinal symptom of Parkinson's. This might make simple tasks take longer than before. Regular exercise, especially activities that focus on big, purposeful movements, can help manage this symptom.",
-  },
-  {
-    keywords: ["balance", "fall", "falling", "stability"],
-    response:
-      "Balance problems can develop as Parkinson's progresses. This might increase the risk of falls. Physical therapy, specific exercises, and assistive devices can help improve stability. It's important to make your living environment as fall-proof as possible.",
-  },
-  {
-    keywords: ["sleep", "insomnia", "tired", "fatigue"],
-    response:
-      "Sleep disturbances are common in Parkinson's disease. This can include difficulty falling asleep, staying asleep, or excessive daytime sleepiness. Good sleep hygiene, regular exercise (not too close to bedtime), and discussing sleep issues with your doctor can help.",
-  },
-  {
-    keywords: ["medication", "medicine", "drug", "treatment"],
-    response:
-      "Medication management is crucial for controlling Parkinson's symptoms. It's important to take medications as prescribed and at the right times. Using the medication tracker in the app can help you stay on schedule. If you're experiencing side effects or reduced effectiveness, consult with your healthcare provider.",
-  },
-  {
-    keywords: ["exercise", "workout", "physical", "activity"],
-    response:
-      "Regular exercise is one of the most important things you can do to manage Parkinson's symptoms. Activities like walking, swimming, tai chi, and specific Parkinson's exercise programs can help maintain mobility, balance, and overall well-being.",
-  },
-  {
-    keywords: ["diet", "food", "nutrition", "eat"],
-    response:
-      "While there's no specific diet for Parkinson's, a balanced diet rich in fruits, vegetables, whole grains, and lean protein is beneficial. Some people find that certain foods may affect their medication absorption. It's also important to stay hydrated and maintain a healthy weight.",
-  },
-  {
-    keywords: ["depression", "anxiety", "mood", "sad", "stress"],
-    response:
-      "Mood changes, including depression and anxiety, are common non-motor symptoms of Parkinson's. These are not just reactions to diagnosis but can be part of the disease itself due to chemical changes in the brain. Talk to your healthcare provider about these symptoms, as they are treatable.",
-  },
-  {
-    keywords: ["speech", "voice", "talking", "swallow"],
-    response:
-      "Speech and swallowing difficulties can occur in Parkinson's. Speech therapy with a focus on speaking louder (like LSVT LOUD therapy) can be very effective. A speech therapist can also help with swallowing issues. The app can remind you to do your speech exercises regularly.",
-  },
-]
-
-// Default response when no keywords match
-const defaultResponse =
-  "I understand you have a question about your symptoms. While I can provide general information about Parkinson's disease, it's important to discuss specific concerns with your healthcare provider. Would you like to know more about common Parkinson's symptoms or management strategies?"
+  id: number;
+  content: string;
+  sender: "user" | "bot";
+  timestamp: Date;
+};
 
 export default function ChatbotPage() {
   const [messages, setMessages] = useState<Message[]>([
@@ -85,56 +25,83 @@ export default function ChatbotPage() {
       sender: "bot",
       timestamp: new Date(),
     },
-  ])
-  const [input, setInput] = useState("")
-  const [isTyping, setIsTyping] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  ]);
+  const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    scrollToBottom()
-  }, [messages])
+    scrollToBottom();
+  }, [messages]);
 
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!input.trim()) return
-
-    // Add user message
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    if (!input.trim()) return;
+  
     const userMessage: Message = {
       id: messages.length + 1,
       content: input,
       sender: "user",
       timestamp: new Date(),
-    }
-
-    setMessages((prev) => [...prev, userMessage])
-    setInput("")
-
-    // Simulate bot typing
-    setIsTyping(true)
-
-    // Find a matching response or use default
-    setTimeout(() => {
-      setIsTyping(false)
-
-      // Check for keyword matches
-      const userInput = input.toLowerCase()
-      const matchedResponse = botResponses.find((item) => item.keywords.some((keyword) => userInput.includes(keyword)))
-
+    };
+  
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsTyping(true);
+  
+    try {
+      const response = await fetch("https://api.perplexity.ai/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_PERPLEXITY_API_KEY}`, // Use environment variable
+        },
+        body: JSON.stringify({
+          model: "sonar-pro",
+          max_tokens: 133,
+          messages: [
+            { role: "system", content: "You are an AI assistant specializing in Parkinson's disease. Provide concise, accurate answers about symptoms, treatments, and management strategies. If a user talks to you about anything that's not parkinson's related, say that you can only give information about parkinson's. Keep the responses under 100 words." },
+            { role: "user", content: input },
+          ],
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+  
       const botMessage: Message = {
         id: messages.length + 2,
-        content: matchedResponse ? matchedResponse.response : defaultResponse,
+        content:
+          data.choices[0]?.message?.content || "Sorry, I couldn't understand your query.",
         sender: "bot",
         timestamp: new Date(),
-      }
-
-      setMessages((prev) => [...prev, botMessage])
-    }, 1500) // Simulate typing delay
-  }
+      };
+  
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Error fetching response:", error);
+  
+      const botMessage: Message = {
+        id: messages.length + 2,
+        content:
+          "There was an error processing your request. Please check your API key or try again later.",
+        sender: "bot",
+        timestamp: new Date(),
+      };
+  
+      setMessages((prev) => [...prev, botMessage]);
+    } finally {
+      setIsTyping(false);
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -149,7 +116,6 @@ export default function ChatbotPage() {
               Ask questions about your symptoms, medication, or Parkinson's management
             </p>
           </div>
-
           <div className="grid gap-6 md:grid-cols-3">
             <div className="md:col-span-2">
               <Card className="h-[600px] flex flex-col">
@@ -167,14 +133,18 @@ export default function ChatbotPage() {
                         <div
                           className={`flex gap-3 max-w-[80%] ${message.sender === "user" ? "flex-row-reverse" : ""}`}
                         >
-                          <Avatar className={message.sender === "user" ? "bg-primary" : "bg-gray-200 dark:bg-gray-700"}>
+                          <Avatar
+                            className={message.sender === "user" ? "bg-primary" : "bg-gray-200 dark:bg-gray-700"}
+                          >
                             <AvatarFallback>
                               {message.sender === "user" ? <User size={18} /> : <Bot size={18} />}
                             </AvatarFallback>
                           </Avatar>
                           <div
                             className={`rounded-lg p-3 ${
-                              message.sender === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
+                              message.sender === "user"
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted"
                             }`}
                           >
                             <p>{message.content}</p>
@@ -195,18 +165,13 @@ export default function ChatbotPage() {
                           </Avatar>
                           <div className="rounded-lg p-3 bg-muted">
                             <div className="flex gap-1">
-                              <div
-                                className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
-                                style={{ animationDelay: "0ms" }}
-                              ></div>
-                              <div
-                                className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
-                                style={{ animationDelay: "150ms" }}
-                              ></div>
-                              <div
-                                className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
-                                style={{ animationDelay: "300ms" }}
-                              ></div>
+                              {[0, 150, 300].map((delay) => (
+                                <div
+                                  key={delay}
+                                  style={{ animationDelay: `${delay}ms` }}
+                                  className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
+                                ></div>
+                              ))}
                             </div>
                           </div>
                         </div>
@@ -231,6 +196,7 @@ export default function ChatbotPage() {
                 </CardFooter>
               </Card>
             </div>
+
 
             <div>
               <Card className="h-[600px] overflow-y-auto">
