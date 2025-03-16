@@ -3,4 +3,16 @@ To start python backend:
 - requires git bash terminal
 - python 3.12 +
 
-1. execute the script `start-backend.sh`
+1. execute the script `start-backend.sh`. this will create an environment and install the dependencies you need to run the backend.
+2. now, cancel that process, and execute this line
+`.venv/Scripts/python backend/backend-server.py`. This will start the python/flask backend (which isn't fully connected).
+
+3. to start the frontend, navigate to the 'frontend' directory and run `npm install --force`
+
+4. now run `npm run dev` to start the frontend.
+
+5. you will not yet be able to access the frontend - first you need to hook a Mysql database up to your frontend by providing sql db login credentials in an .env file in the 'frontend' directory like so: 
+
+`DATABASE_URL="mysql://root:password@localhost:3306/parker"`
+
+6. now ensure your MySQL database is up and running and voila! you're good to go.
