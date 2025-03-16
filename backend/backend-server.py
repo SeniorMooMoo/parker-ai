@@ -1,8 +1,8 @@
 import os
 import json
+import base64
 import requests
 from flask import Flask, request, jsonify
-from backend.services import deprecated_google_api_service
 from services import handwriting_service, speech_service
 from datetime import datetime
 
@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 # Initialize your proprietary services
 gcloud_key = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
-api_service = deprecated_google_api_service.SimpleDocumentAIClient(gcloud_key) 
 handwriting_service = handwriting_service.HandwritingAnalysisService()
 speech_service = speech_service.SpeechAnalysisService() 
 # speech_service = SpeechAnalysisService()
@@ -72,10 +71,12 @@ def speech_analysis():
     required_fields = ["content"]
     for field in required_fields:
         if field not in data:
-            return jsonify({"error": f"Missing required field: {field}"}), 40
+            return jsonify({"error": f"Missing required field: {field}"}), 400
         
     try: 
-        analyzed_audio = speech_service.analyze_audio(data["content"])
+        base64_content = data.get('content')
+        raw_content = base64.b64decode(base64_content)
+        analyzed_audio = speech_service.analyze_audio(raw_content)
         updrs_score = speech_service.calculate_updrs_score(analyzed_audio)
         return jsonify({
             "score": updrs_score,

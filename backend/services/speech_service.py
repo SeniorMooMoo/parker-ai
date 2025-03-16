@@ -1,4 +1,3 @@
-import streamlit as st
 import librosa
 import numpy as np
 import soundfile as sf
@@ -35,7 +34,6 @@ class SpeechAnalysisService:
 
             # Validate audio length
             if len(y)/sr < 3:
-                st.error("Recording too short (min 3 seconds required)")
                 return None
                 
             # Enhanced noise reduction
@@ -96,15 +94,6 @@ class SpeechAnalysisService:
             else:
                 hnr = 0  # Default value if no harmonic content
 
-            # Debug outputs
-            st.write("### Raw Feature Values")
-            st.write(f"Pitch (Hz): Mean={pitch_mean:.1f} ± {pitch_var:.1f}")
-            st.write(f"Volume (dB): Var={volume_var_db:.2f} dB")
-            st.write(f"Formants (Hz): Mean={formant_mean:.1f} ± {formant_var:.1f}")
-            st.write(f"Jitter: {jitter:.4f}")
-            st.write(f"Shimmer: {shimmer:.4f}")
-            st.write(f"HNR: {hnr:.1f}")
-
             # Return results as scalar values
             return {
                 'y': y_filtered,
@@ -121,7 +110,7 @@ class SpeechAnalysisService:
             }
 
         except Exception as e:
-            st.error(f"Analysis failed: {str(e)}")
+            print(f"Analysis failed: {str(e)}")
             return None
         
         
