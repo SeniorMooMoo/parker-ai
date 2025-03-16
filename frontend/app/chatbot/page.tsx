@@ -21,7 +21,7 @@ export default function ChatbotPage() {
     {
       id: 1,
       content:
-        "Hello! I'm your ParkinTrack AI Assistant. I can answer questions about Parkinson's symptoms, medication, and management strategies. How can I help you today?",
+        "Hello! I'm your Parker AI Assistant. I can answer questions about Parkinson's symptoms, medication, and management strategies. How can I help you today?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -120,7 +120,7 @@ export default function ChatbotPage() {
             <div className="md:col-span-2">
               <Card className="h-[600px] flex flex-col">
                 <CardHeader>
-                  <CardTitle>Chat with ParkinTrack Assistant</CardTitle>
+                  <CardTitle>Chat with Parker Assistant</CardTitle>
                   <CardDescription>Ask questions about symptoms, treatments, or daily management</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 overflow-y-auto">
@@ -246,7 +246,7 @@ export default function ChatbotPage() {
         </div>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 ParkinTrack. All rights reserved.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 Parker. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service

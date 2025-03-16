@@ -1,0 +1,6 @@
+To start python backend: 
+
+- requires git bash terminal
+- python 3.12 +
+
+1. execute the script `start-backend.sh`

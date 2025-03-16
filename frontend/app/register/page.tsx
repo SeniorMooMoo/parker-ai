@@ -1,37 +1,54 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useState } from "react"
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function RegisterPage() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleRegister = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-    // Simulate registration process
-    setTimeout(() => {
-      // In a real app, you would create the user account here
-      // For now, we'll just redirect to the dashboard
-      router.push("/dashboard")
-    }, 1000)
-  }
+    const name = (document.getElementById("name") as HTMLInputElement)?.value;
+    const email = (document.getElementById("email") as HTMLInputElement)?.value;
+    const password = (document.getElementById("password") as HTMLInputElement)?.value;
+    const accountType = (document.getElementById("account-type") as HTMLSelectElement)?.value;
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, accountType }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Registration failed");
+      }
+
+      alert("Account created successfully!");
+      router.push("/login");
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+      else alert("An unknown error occurred.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 to-white px-4 py-12 dark:from-gray-900 dark:to-purple-950/30">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
-          <CardDescription>Enter your information to create a ParkinTrack account</CardDescription>
+          <CardDescription>Enter your information to create a Parker account</CardDescription>
         </CardHeader>
         <form onSubmit={handleRegister}>
           <CardContent className="space-y-4">
@@ -49,10 +66,7 @@ export default function RegisterPage() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="account-type">Account Type</Label>
-              <select
-                id="account-type"
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              >
+              <select id="account-type" className="w-full rounded-md border px-3 py-2 text-sm">
                 <option value="patient">Patient</option>
                 <option value="caregiver">Caregiver</option>
                 <option value="doctor">Healthcare Provider</option>
@@ -73,6 +87,5 @@ export default function RegisterPage() {
         </form>
       </Card>
     </div>
-  )
+  );
 }
-

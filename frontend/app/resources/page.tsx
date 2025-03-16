@@ -315,7 +315,7 @@ export default function ResourcesPage() {
               </div>
 
               <div className="mt-8 p-6 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                <h2 className="text-2xl font-bold mb-2">Featured Tool: ParkinTrack Mobile App</h2>
+                <h2 className="text-2xl font-bold mb-2">Featured Tool: Parker Mobile App</h2>
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="md:w-2/3">
                     <p className="mb-4 text-gray-500 dark:text-gray-400">
@@ -336,7 +336,7 @@ export default function ResourcesPage() {
                   <div className="md:w-1/3">
                     <img
                       src="/placeholder.svg?height=200&width=100"
-                      alt="ParkinTrack Mobile App"
+                      alt="Parker Mobile App"
                       className="mx-auto h-auto max-w-full rounded-lg shadow-lg"
                     />
                   </div>
@@ -347,7 +347,7 @@ export default function ResourcesPage() {
         </div>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 ParkinTrack. All rights reserved.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 Parker. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service
