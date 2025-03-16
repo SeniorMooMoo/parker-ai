@@ -1,0 +1,400 @@
+{
+  "uri": "",
+  "mimeType": "image/jpeg",
+  "text": "Horse meat is disgusting!\n",
+  "pages": [{
+    "pageNumber": 1,
+    "dimension": {
+      "width": 4104.0,
+      "height": 1465.0,
+      "unit": "pixels"
+    },
+    "layout": {
+      "textAnchor": {
+        "textSegments": [{
+          "endIndex": "26"
+        }]
+      },
+      "confidence": 0.9579682,
+      "boundingPoly": {
+        "vertices": [{
+        }, {
+          "x": 4104
+        }, {
+          "x": 4104,
+          "y": 1465
+        }, {
+          "y": 1465
+        }],
+        "normalizedVertices": [{
+        }, {
+          "x": 1.0
+        }, {
+          "x": 1.0,
+          "y": 1.0
+        }, {
+          "y": 1.0
+        }]
+      },
+      "orientation": "PAGE_UP"
+    },
+    "detectedLanguages": [{
+      "languageCode": "en",
+      "confidence": 1.0
+    }],
+    "blocks": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "26"
+          }]
+        },
+        "confidence": 0.9579682,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 702,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 940
+          }, {
+            "x": 702,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.17105263,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.6416382
+          }, {
+            "x": 0.17105263,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      }
+    }],
+    "paragraphs": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "26"
+          }]
+        },
+        "confidence": 0.9579682,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 702,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 940
+          }, {
+            "x": 702,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.17105263,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.6416382
+          }, {
+            "x": 0.17105263,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      }
+    }],
+    "lines": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "26"
+          }]
+        },
+        "confidence": 0.9579682,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 702,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 526
+          }, {
+            "x": 3445,
+            "y": 940
+          }, {
+            "x": 702,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.17105263,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.35904437
+          }, {
+            "x": 0.83942497,
+            "y": 0.6416382
+          }, {
+            "x": 0.17105263,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }],
+    "tokens": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "6"
+          }]
+        },
+        "confidence": 0.94281673,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 702,
+            "y": 526
+          }, {
+            "x": 1323,
+            "y": 527
+          }, {
+            "x": 1323,
+            "y": 941
+          }, {
+            "x": 702,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.17105263,
+            "y": 0.35904437
+          }, {
+            "x": 0.3223684,
+            "y": 0.35972697
+          }, {
+            "x": 0.3223684,
+            "y": 0.6423208
+          }, {
+            "x": 0.17105263,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "6",
+            "endIndex": "11"
+          }]
+        },
+        "confidence": 0.9922248,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 1379,
+            "y": 527
+          }, {
+            "x": 1912,
+            "y": 527
+          }, {
+            "x": 1911,
+            "y": 940
+          }, {
+            "x": 1380,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.33601364,
+            "y": 0.35972697
+          }, {
+            "x": 0.46588695,
+            "y": 0.35972697
+          }, {
+            "x": 0.4656433,
+            "y": 0.6416382
+          }, {
+            "x": 0.3362573,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "11",
+            "endIndex": "14"
+          }]
+        },
+        "confidence": 0.991073,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 2007,
+            "y": 527
+          }, {
+            "x": 2322,
+            "y": 527
+          }, {
+            "x": 2322,
+            "y": 940
+          }, {
+            "x": 2007,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.4890351,
+            "y": 0.35972697
+          }, {
+            "x": 0.56578946,
+            "y": 0.35972697
+          }, {
+            "x": 0.56578946,
+            "y": 0.6416382
+          }, {
+            "x": 0.4890351,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "14",
+            "endIndex": "24"
+          }]
+        },
+        "confidence": 0.9479405,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 2383,
+            "y": 527
+          }, {
+            "x": 3337,
+            "y": 527
+          }, {
+            "x": 3336,
+            "y": 940
+          }, {
+            "x": 2383,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.580653,
+            "y": 0.35972697
+          }, {
+            "x": 0.81310916,
+            "y": 0.35972697
+          }, {
+            "x": 0.8128655,
+            "y": 0.6416382
+          }, {
+            "x": 0.580653,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "24",
+            "endIndex": "26"
+          }]
+        },
+        "confidence": 0.93076533,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 3281,
+            "y": 527
+          }, {
+            "x": 3445,
+            "y": 527
+          }, {
+            "x": 3445,
+            "y": 940
+          }, {
+            "x": 3281,
+            "y": 940
+          }],
+          "normalizedVertices": [{
+            "x": 0.7994639,
+            "y": 0.35972697
+          }, {
+            "x": 0.83942497,
+            "y": 0.35972697
+          }, {
+            "x": 0.83942497,
+            "y": 0.6416382
+          }, {
+            "x": 0.7994639,
+            "y": 0.6416382
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "WIDE_SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }],
+    "transforms": [{
+      "rows": 2,
+      "cols": 3,
+      "type": 6,
+      "data": "rYGvBabs7z/PTUdr8pWxPwAAKI56nSG/z01Ha/KVsb+tga8FpuzvPzk3sHeaT3FA"
+    }]
+  }]
+}

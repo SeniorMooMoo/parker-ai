@@ -1,0 +1,4 @@
+.venv
+.env
+algebra*
+backend/services/__pycache__

@@ -1,0 +1,533 @@
+{
+  "uri": "",
+  "mimeType": "image/jpeg",
+  "text": "The lamb crossed the\nStreet slowly.\n",
+  "pages": [{
+    "pageNumber": 1,
+    "dimension": {
+      "width": 4032.0,
+      "height": 1763.0,
+      "unit": "pixels"
+    },
+    "layout": {
+      "textAnchor": {
+        "textSegments": [{
+          "endIndex": "36"
+        }]
+      },
+      "confidence": 0.94738317,
+      "boundingPoly": {
+        "vertices": [{
+        }, {
+          "x": 4032
+        }, {
+          "x": 4032,
+          "y": 1763
+        }, {
+          "y": 1763
+        }],
+        "normalizedVertices": [{
+        }, {
+          "x": 1.0
+        }, {
+          "x": 1.0,
+          "y": 1.0
+        }, {
+          "y": 1.0
+        }]
+      },
+      "orientation": "PAGE_UP"
+    },
+    "detectedLanguages": [{
+      "languageCode": "en",
+      "confidence": 1.0
+    }],
+    "blocks": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "36"
+          }]
+        },
+        "confidence": 0.94738317,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 664,
+            "y": 402
+          }, {
+            "x": 3249,
+            "y": 494
+          }, {
+            "x": 3221,
+            "y": 1298
+          }, {
+            "x": 635,
+            "y": 1206
+          }],
+          "normalizedVertices": [{
+            "x": 0.16468254,
+            "y": 0.22802041
+          }, {
+            "x": 0.8058036,
+            "y": 0.2802042
+          }, {
+            "x": 0.7988591,
+            "y": 0.73624504
+          }, {
+            "x": 0.15749007,
+            "y": 0.6840613
+          }]
+        },
+        "orientation": "PAGE_UP"
+      }
+    }],
+    "paragraphs": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "36"
+          }]
+        },
+        "confidence": 0.94738317,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 664,
+            "y": 402
+          }, {
+            "x": 3249,
+            "y": 494
+          }, {
+            "x": 3221,
+            "y": 1298
+          }, {
+            "x": 635,
+            "y": 1206
+          }],
+          "normalizedVertices": [{
+            "x": 0.16468254,
+            "y": 0.22802041
+          }, {
+            "x": 0.8058036,
+            "y": 0.2802042
+          }, {
+            "x": 0.7988591,
+            "y": 0.73624504
+          }, {
+            "x": 0.15749007,
+            "y": 0.6840613
+          }]
+        },
+        "orientation": "PAGE_UP"
+      }
+    }],
+    "lines": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "21"
+          }]
+        },
+        "confidence": 0.974637,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 662,
+            "y": 453
+          }, {
+            "x": 3243,
+            "y": 493
+          }, {
+            "x": 3238,
+            "y": 806
+          }, {
+            "x": 657,
+            "y": 766
+          }],
+          "normalizedVertices": [{
+            "x": 0.16418651,
+            "y": 0.25694838
+          }, {
+            "x": 0.80431545,
+            "y": 0.27963698
+          }, {
+            "x": 0.8030754,
+            "y": 0.45717525
+          }, {
+            "x": 0.16294643,
+            "y": 0.43448666
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "21",
+            "endIndex": "36"
+          }]
+        },
+        "confidence": 0.91174364,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 690,
+            "y": 841
+          }, {
+            "x": 2241,
+            "y": 927
+          }, {
+            "x": 2222,
+            "y": 1262
+          }, {
+            "x": 671,
+            "y": 1176
+          }],
+          "normalizedVertices": [{
+            "x": 0.17113096,
+            "y": 0.4770278
+          }, {
+            "x": 0.5558036,
+            "y": 0.5258083
+          }, {
+            "x": 0.55109125,
+            "y": 0.7158253
+          }, {
+            "x": 0.16641866,
+            "y": 0.6670448
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }],
+    "tokens": [{
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "endIndex": "4"
+          }]
+        },
+        "confidence": 0.9846713,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 662,
+            "y": 453
+          }, {
+            "x": 1167,
+            "y": 461
+          }, {
+            "x": 1162,
+            "y": 774
+          }, {
+            "x": 657,
+            "y": 766
+          }],
+          "normalizedVertices": [{
+            "x": 0.16418651,
+            "y": 0.25694838
+          }, {
+            "x": 0.28943452,
+            "y": 0.2614861
+          }, {
+            "x": 0.28819445,
+            "y": 0.4390244
+          }, {
+            "x": 0.16294643,
+            "y": 0.43448666
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "4",
+            "endIndex": "9"
+          }]
+        },
+        "confidence": 0.96037877,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 1315,
+            "y": 463
+          }, {
+            "x": 1921,
+            "y": 472
+          }, {
+            "x": 1916,
+            "y": 785
+          }, {
+            "x": 1310,
+            "y": 776
+          }],
+          "normalizedVertices": [{
+            "x": 0.32614088,
+            "y": 0.26262054
+          }, {
+            "x": 0.4764385,
+            "y": 0.26772547
+          }, {
+            "x": 0.47519842,
+            "y": 0.44526374
+          }, {
+            "x": 0.3249008,
+            "y": 0.4401588
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "9",
+            "endIndex": "17"
+          }]
+        },
+        "confidence": 0.97333103,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 2030,
+            "y": 475
+          }, {
+            "x": 2710,
+            "y": 486
+          }, {
+            "x": 2705,
+            "y": 798
+          }, {
+            "x": 2025,
+            "y": 787
+          }],
+          "normalizedVertices": [{
+            "x": 0.5034722,
+            "y": 0.26942712
+          }, {
+            "x": 0.672123,
+            "y": 0.27566648
+          }, {
+            "x": 0.67088294,
+            "y": 0.45263755
+          }, {
+            "x": 0.50223213,
+            "y": 0.4463982
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "17",
+            "endIndex": "21"
+          }]
+        },
+        "confidence": 0.9866608,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 2923,
+            "y": 488
+          }, {
+            "x": 3243,
+            "y": 493
+          }, {
+            "x": 3238,
+            "y": 806
+          }, {
+            "x": 2918,
+            "y": 801
+          }],
+          "normalizedVertices": [{
+            "x": 0.7249504,
+            "y": 0.2768009
+          }, {
+            "x": 0.80431545,
+            "y": 0.27963698
+          }, {
+            "x": 0.8030754,
+            "y": 0.45717525
+          }, {
+            "x": 0.7237103,
+            "y": 0.4543392
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "WIDE_SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "21",
+            "endIndex": "28"
+          }]
+        },
+        "confidence": 0.95139885,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 690,
+            "y": 841
+          }, {
+            "x": 1363,
+            "y": 878
+          }, {
+            "x": 1344,
+            "y": 1214
+          }, {
+            "x": 671,
+            "y": 1176
+          }],
+          "normalizedVertices": [{
+            "x": 0.17113096,
+            "y": 0.4770278
+          }, {
+            "x": 0.33804563,
+            "y": 0.49801475
+          }, {
+            "x": 0.33333334,
+            "y": 0.688599
+          }, {
+            "x": 0.16641866,
+            "y": 0.6670448
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "28",
+            "endIndex": "34"
+          }]
+        },
+        "confidence": 0.9284809,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 1564,
+            "y": 889
+          }, {
+            "x": 2188,
+            "y": 924
+          }, {
+            "x": 2169,
+            "y": 1259
+          }, {
+            "x": 1545,
+            "y": 1224
+          }],
+          "normalizedVertices": [{
+            "x": 0.38789684,
+            "y": 0.5042541
+          }, {
+            "x": 0.54265875,
+            "y": 0.5241066
+          }, {
+            "x": 0.5379464,
+            "y": 0.71412367
+          }, {
+            "x": 0.38318452,
+            "y": 0.69427115
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }, {
+      "layout": {
+        "textAnchor": {
+          "textSegments": [{
+            "startIndex": "34",
+            "endIndex": "36"
+          }]
+        },
+        "confidence": 0.57338893,
+        "boundingPoly": {
+          "vertices": [{
+            "x": 2150,
+            "y": 922
+          }, {
+            "x": 2241,
+            "y": 927
+          }, {
+            "x": 2222,
+            "y": 1262
+          }, {
+            "x": 2131,
+            "y": 1256
+          }],
+          "normalizedVertices": [{
+            "x": 0.5332341,
+            "y": 0.5229722
+          }, {
+            "x": 0.5558036,
+            "y": 0.5258083
+          }, {
+            "x": 0.55109125,
+            "y": 0.7158253
+          }, {
+            "x": 0.52852184,
+            "y": 0.712422
+          }]
+        },
+        "orientation": "PAGE_UP"
+      },
+      "detectedBreak": {
+        "type": "WIDE_SPACE"
+      },
+      "detectedLanguages": [{
+        "languageCode": "en",
+        "confidence": 1.0
+      }]
+    }],
+      "mimeType": "image/jpeg",
+      "width": 4032,
+      "height": 1763
+    }
+  ]
+}
