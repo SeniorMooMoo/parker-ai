@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model speech {
+  id        Int      @id @default(autoincrement())
+  score     Float
+  createdAt DateTime @default(now())
+  userId    Int
+  user      user     @relation(fields: [userId], references: [id], map: "Speech_userId_fkey")
+
+  @@index([userId], map: "Speech_userId_fkey")
+}
+
+model user {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique(map: "User_email_key")
+  password    String
+  accountType String
+  createdAt   DateTime @default(now())
+  speech      speech[]
+}
