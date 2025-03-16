@@ -13,7 +13,7 @@ const navItems = [
   { href: "/resources", label: "Resources" },
   { href: "/plan-visit", label: "Plan Visit" },
   { href: "/chatbot", label: "AI Assistant" },
-  { href: "/speech", label: "Speech Analysis" },
+  { href: "/weekly-assessment", label: "Weekly Assessments" },
   { href: "/logout", label: "Logout" },
 ]
 
