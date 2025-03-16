@@ -1,15 +1,17 @@
 import os
 import json
+import base64
 import requests
 from flask import Flask, request, jsonify
-from backend.services import deprecated_google_api_service
-from services import handwriting_service
+from services import handwriting_service, speech_service
+from datetime import datetime
+
 app = Flask(__name__)
 
 # Initialize your proprietary services
 gcloud_key = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
-api_service = deprecated_google_api_service.SimpleDocumentAIClient(gcloud_key) 
 handwriting_service = handwriting_service.HandwritingAnalysisService()
+speech_service = speech_service.SpeechAnalysisService() 
 # speech_service = SpeechAnalysisService()
 
 @app.route('/writing-analysis', methods=['POST'])
@@ -48,6 +50,7 @@ def analyze_writing():
         
         return jsonify({
             "trends": json.dumps(trends).encode('utf-8'),
+            "timestamp_utc": str(datetime.now()), 
             "status": "success"
         })
     
@@ -59,7 +62,33 @@ def analyze_writing():
 
 @app.route('/speech-analysis', methods=['POST'])
 def speech_analysis():
-    return 
+
+    if not request.is_json:
+        return jsonify({"error": "Request must be JSON"}), 400
+    
+    data = request.get_json()
+    
+    required_fields = ["content"]
+    for field in required_fields:
+        if field not in data:
+            return jsonify({"error": f"Missing required field: {field}"}), 400
+        
+    try: 
+        base64_content = data.get('content')
+        raw_content = base64.b64decode(base64_content)
+        analyzed_audio = speech_service.analyze_audio(raw_content)
+        updrs_score = speech_service.calculate_updrs_score(analyzed_audio)
+        return jsonify({
+            "score": updrs_score,
+            "timestamp_utc": str(datetime.now()),
+            "status": "success"
+        })
+    
+    except Exception as e:
+        return jsonify({
+            "error": f"{e}",
+            "status": "failed"
+        }), 500
 
 # Add a basic health check endpoint
 @app.route('/health', methods=['GET'])
