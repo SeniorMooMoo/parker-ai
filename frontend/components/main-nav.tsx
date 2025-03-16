@@ -13,8 +13,8 @@ const navItems = [
   { href: "/resources", label: "Resources" },
   { href: "/plan-visit", label: "Plan Visit" },
   { href: "/chatbot", label: "AI Assistant" },
-  { href: "/speech", label: "Speech Analysis" },
-  { href: "#", label: "Logout", action: true }, // Add action flag for logout
+  { href: "/weekly-assessment", label: "Weekly Assessments" },
+  { href: "/logout", label: "Logout" },
 ];
 
 export function MainNav() {
