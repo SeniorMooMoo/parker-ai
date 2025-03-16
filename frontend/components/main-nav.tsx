@@ -13,6 +13,7 @@ const navItems = [
   { href: "/resources", label: "Resources" },
   { href: "/plan-visit", label: "Plan Visit" },
   { href: "/chatbot", label: "AI Assistant" },
+  { href: "/speech", label: "Speech Analysis" },
   { href: "/logout", label: "Logout" },
 ]
 
@@ -23,7 +24,7 @@ export function MainNav() {
   return (
     <>
       <Link href="/" className="flex items-center gap-2 font-semibold">
-        <span className="text-lg font-bold">ParkinTrack</span>
+        <span className="text-lg font-bold">Parker</span>
       </Link>
 
       {/* Desktop Navigation */}

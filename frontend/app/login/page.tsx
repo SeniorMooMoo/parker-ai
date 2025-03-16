@@ -30,7 +30,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 to-white px-4 py-12 dark:from-gray-900 dark:to-purple-950/30">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Login to ParkinTrack</CardTitle>
+          <CardTitle className="text-2xl font-bold">Login to Parker</CardTitle>
           <CardDescription>Enter your credentials to access your account</CardDescription>
         </CardHeader>
         <form onSubmit={handleLogin}>
